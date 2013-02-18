@@ -22,7 +22,6 @@ def add_address(request):
             addresses = Address.objects.all()
             html = render_to_string('contacts.html', {'addresses':addresses})
         else:
-            print 'form is invalid'
             html = render_to_string('add_contact.html', {'form':form})
 
     else:
