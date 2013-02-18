@@ -1,0 +1,10 @@
+all dependencies are added in requirements.txt file.
+
+Inorder to run this project:
+
+  * create a python virtualenv (eg: virtualenv --no-site-packages myvenv)
+  * source /path/to/myvenv/bin/activate
+  * pip install -r requirements.txt
+
+  Note: Djago south is used for database migration. to migrate data into database just run `./manage.py migrate`
+  (also database file is given inside project home folder. Export that into your database.)
