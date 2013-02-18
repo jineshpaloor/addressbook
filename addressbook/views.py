@@ -18,9 +18,7 @@ def home(request):
 @csrf_exempt
 def add_address(request):
     if request.method == 'POST':
-        print 'post :',request.POST
         form = AddressForm(data=request.POST)
-        print 'form...',form
         if form.is_valid():
             form.save()
             addresses = Address.objects.all()
@@ -36,4 +34,12 @@ def add_address(request):
     data = {'html': html}
     json = simplejson.dumps(data)
     return HttpResponse(json, mimetype='application/json')
+
+def all_address(request):
+    addresses = Address.objects.all()
+    html = render_to_string('contacts.html', {'addresses':addresses})
+    data = {'html': html}
+    json = simplejson.dumps(data)
+    return HttpResponse(json, mimetype='application/json')
+
 

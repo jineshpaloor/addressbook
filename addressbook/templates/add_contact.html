@@ -1,5 +1,7 @@
-<form id="add-contact-form" action={% url add-address %} method="POST">
+<h2 class="address-header">Add Contact</h2>
+<form id="add-contact-form" class="well" action={% url add-address %} method="POST">
     {% csrf_token %}
     {{ form.as_table }}
-    <input type="submit" id="add-contact-submit">
+    <br/>
+    <input type="submit" class="btn btn-primary" id="add-contact-submit">
 </form>

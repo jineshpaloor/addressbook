@@ -1,6 +1,9 @@
-<h2>All Contacts</h2>
-<ul>
-{% for adress in addresses %}
-<li>{{ address.name }}</li>
+<h2 class="address-header">All Contacts</h2>
+{% for address in addresses %}
+<div class="contact-detail">
+    <p><strong>Name:</strong> {{ address.name }}</p>
+    <p><strong>Email:</strong> {{ address.email }}</p>
+    <p><strong>Mobile:</strong> {{ address.mobile }}</p>
+    <p><strong>Website:</strong> <a href="{{ address.url }}" target="_blank">{{ address.url }}</a></p>
+</div>
 {% endfor %}
-</ul>

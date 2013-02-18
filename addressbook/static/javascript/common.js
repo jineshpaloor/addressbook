@@ -1,5 +1,17 @@
 $(document).ready(function() {
 
+    $("#view-contacts").click(function (){
+        var content = $("#content");
+        $.ajax({
+            url:'/address/all/',
+            type: 'GET',
+            success: function (resp){
+                $(content).html(resp.html);
+            }
+        });
+    });
+
+
     $("#add-contact").click(function (){
         var content = $("#content");
         $.ajax({
