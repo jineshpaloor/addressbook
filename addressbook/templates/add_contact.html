@@ -1,0 +1,5 @@
+<form id="add-contact-form" action={% url add-address %} method="POST">
+    {% csrf_token %}
+    {{ form.as_table }}
+    <input type="submit" id="add-contact-submit">
+</form>
