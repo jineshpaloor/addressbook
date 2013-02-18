@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from django.utils import simplejson
 from django.template import RequestContext
 from django.template.loader import render_to_string
-from django.views.decorators.csrf import csrf_exempt
 
 from addressbook.forms import AddressForm
 from addressbook.models import Address
@@ -15,7 +14,6 @@ def home(request):
                               context_instance=RequestContext(request))
 
 
-@csrf_exempt
 def add_address(request):
     if request.method == 'POST':
         form = AddressForm(data=request.POST)
